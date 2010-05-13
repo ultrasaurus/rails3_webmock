@@ -33,7 +33,7 @@ end
 
 describe Thing3 do
   it "should call a net API" do
-    uri_string = "http://api.3jam.com/webapi.php?method=3jam.publicgroups.join&api_key=sPJ4jWvT1IPrEyOdHSWy502Gr9vh25E0WEnqIvLFCv8yTd3vHyFIm7aAQX6m2945&group_id=2&user_id=1&api_version=1.03"
+    uri_string = "http://api.3jam.com/webapi.php?method=3jam.publicgroups.add&api_key=sPJ4jWvT1IPrEyOdHSWy502Gr9vh25E0WEnqIvLFCv8yTd3vHyFIm7aAQX6m2945&group_id=2&user_id=1&api_version=1.03"
     stub_request(:get, uri_string).to_return(:body => "something")
     Thing3.call(uri_string).should == "something"
     WebMock.should have_requested(:get, uri_string)
